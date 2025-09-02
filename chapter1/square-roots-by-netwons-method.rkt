@@ -10,7 +10,9 @@
 
 ; stop condition
 (define (good-enough? guess x)
-    (< (abs (- (square guess) x)) 0.001)
+    (< (abs (- guess (improve guess x))) 
+        (* guess 0.001)
+    )
 )
 
 (define (improve guess x)
